@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
-# Create your views here.
+def home(request, template_name="home.html"):
+	context = {'title': 'Jokes Central'}
+	return render_to_response(template_name, context)
